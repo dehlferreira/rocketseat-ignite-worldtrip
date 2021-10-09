@@ -1,34 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-pré-requisitos">Pré-Requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-configuração">Configuração</a>&nbsp;&nbsp;&nbsp;
+  <br>
+  <a href="#-instalando-dependências">Instalando dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-iniciando-aplicação">Iniciando aplicação</a>&nbsp;&nbsp;&nbsp;
 
-## Getting Started
+</p>
 
-First, run the development server:
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
+<h1 align="center">
+  ✈️ Worldtrip
+</h1>
+
+![capa](.github/assets/capa.png?style=flat)
+![home](.github/assets/home.png?style=flat)
+![details](.github/assets/details.png?style=flat)
+
+## 💻 Projeto
+
+Este projeto foi desenvolvido para entrega do desafio do Ignite da Rocketseat. Tem como objetivo criar uma aplicação do zero seguindo um layout disponibilizado no Figma, utlizando as tecnologias Next.JS e Chakra UI
+
+Para visualizar a aplicação clique no link [worldtrip](https://worldtrip.andrelf.dev)
+
+<br>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Typescript](https://www.typescriptlang.org/docs/)
+- [ReactJS](https://reactjs.org/docs/hello-world.html)
+- [NextJS](https://nextjs.org/)
+- [Chakra UI](https://chakra-ui.com/docs/getting-started)
+
+<br>
+
+## 🔖 Layout
+
+No link abaixo você encontra o layout do projeto web. Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo.
+
+- [Layout](https://www.figma.com/file/wkLer67huXmGeXTYR0jjnO/Desafio-1-M%C3%B3dulo-4-ReactJS-(Copy)?node-id=0%3A1)
+
+<br>
+
+## ⚙ Pré-Requisitos
+
+- [Node](https://nodejs.org/pt-br/)
+- [Yarn](https://yarnpkg.com/getting-started)
+
+<br>
+
+## ⚙ Rodando a aplicação localmente
+### ▶ Configuração
+
+No terminal clone o projeto para o diretório desejado:
+
+```
+git clone https://github.com/dehlferreira/rocketseat-ignite-worldtrip.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ▶ Instalando dependências
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Para instalar, acesse o diretório onde você clonou o projeto:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+cd rocketseat-ignite-worldtrip
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Instale as dependências:
 
-## Learn More
+```
+yarn install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### ▶ Iniciando aplicação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ainda no diretório do projeto, execute o comando no terminal:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+yarn dev
+```
+Agora abra o navegador e copie o link a baixo:
 
-## Deploy on Vercel
+```
+http://localhost:3000/
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Crie um arquivo .env.local na raiz do projeto e insira as variáveis de ambiente.
+É necessário ter uma conta configurada no Prismic CMS.
+
+```cl
+PRISMIC_API_ENDPOINT=
+PRISMIC_ACCESS_TOKEN=
+```
+<br>
+
+## 📝 Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](https://github.com/dehlferreira/rocketseat-ignite-worldtrip/blob/develop/LICENSE) para detalhes.
+
+---
+
+Feito com ❤️  por André Luiz Ferreira
