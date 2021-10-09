@@ -1,3 +1,14 @@
+import Head from 'next/head';
+
 export default function Home() {
-  return <h1>WorldTrip</h1>;
+  return (
+    <>
+      <Head>
+        <title>Woldtrip | Home</title>
+      </Head>
+      <body>
+        <h1>WorldTrip</h1>
+      </body>
+    </>
+  );
 }
