@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
 import { Grid, GridItem } from '@chakra-ui/react';
 
-import Category from './category';
+import Category from './Category';
 
 export default function Categories() {
   return (
