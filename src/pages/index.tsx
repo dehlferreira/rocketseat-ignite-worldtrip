@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Banner from '../components/Banner';
 import Categories from '../components/Categories';
 import Separator from '../components/Separator';
+import Slide from '../components/Slide';
 
 export default function Home() {
   return (
@@ -18,9 +19,16 @@ export default function Home() {
       <Categories />
       <Separator />
 
-      <Heading textAlign="center" fontWeight="500" fontSize="4xl">
+      <Heading
+        textAlign="center"
+        fontWeight="500"
+        mb={['5', '14']}
+        fontSize={['lg', '3xl', '4xl']}
+      >
         Vamos nessa? <br /> Então escolha seu continente
       </Heading>
+
+      <Slide />
     </Flex>
   );
 }
