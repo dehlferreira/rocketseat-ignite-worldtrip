@@ -7,6 +7,7 @@ import { RichText } from 'prismic-dom';
 
 import Slide from '../components/Slide';
 import Banner from '../components/Banner';
+import Header from '../components/Header';
 import Separator from '../components/Separator';
 import Categories from '../components/Categories';
 
@@ -29,6 +30,8 @@ export default function Home({ posts }: PostsProps) {
       <Head>
         <title>Woldtrip | Home</title>
       </Head>
+
+      <Header />
 
       <Banner />
       <Categories />
