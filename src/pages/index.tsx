@@ -58,18 +58,18 @@ export const getStaticProps: GetStaticProps = async () => {
     {},
   );
 
-  const posts = postResponse.results.map(post => {
-    return {
-      uid: post?.uid,
-      bannerTitle: RichText.asText(post?.data?.banner_title),
-      bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
-      bannerImageUrl: post?.data?.banner_image?.url,
-    };
-  });
+  // const posts = postResponse.results.map(post => {
+  //   return {
+  //     uid: post?.uid,
+  //     bannerTitle: RichText.asText(post?.data?.banner_title),
+  //     bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
+  //     // bannerImageUrl: post?.data?.banner_image?.url,
+  //   };
+  // });
 
   return {
     props: {
-      posts,
+      // posts,
     },
     revalidate: 60 * 60 * 24, // 24 hours
   };
