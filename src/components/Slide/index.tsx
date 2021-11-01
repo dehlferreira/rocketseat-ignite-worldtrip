@@ -57,7 +57,7 @@ export default function Slide({ posts }: SlideProps) {
               bgSize="cover"
               textAlign="center"
             >
-              <Link href={post.uid}>
+              <Link href="#">
                 <a>
                   <Heading
                     fontSize={['3xl', '4xl', '5xl']}
