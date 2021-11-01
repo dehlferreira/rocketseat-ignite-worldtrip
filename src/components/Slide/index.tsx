@@ -1,6 +1,6 @@
 import { Flex, Heading, Text } from '@chakra-ui/react';
 
-import Link from 'next/link';
+// import Link from 'next/link';
 
 import SwiperCore, {
   Navigation,
