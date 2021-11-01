@@ -17,7 +17,7 @@ type Posts = {
   uid: string;
   bannerTitle: string;
   bannerSubtitle: string;
-  bannerImage: string;
+  bannerImageUrl: string;
 };
 
 interface PostsProps {
@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async () => {
       uid: post?.uid,
       bannerTitle: RichText.asText(post?.data?.banner_title),
       bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
-      bannerImage: post?.data?.banner_image.url,
+      bannerImageUrl: post?.data?.banner_image?.url,
     };
   });
 

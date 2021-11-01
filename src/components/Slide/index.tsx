@@ -18,7 +18,7 @@ type Post = {
   uid: string;
   bannerTitle: string;
   bannerSubtitle: string;
-  bannerImage: string;
+  bannerImageUrl: string;
 };
 
 interface SlideProps {
@@ -51,7 +51,7 @@ export default function Slide({ posts }: SlideProps) {
               align="center"
               justify="center"
               direction="column"
-              // bgImage={`url(${post?.bannerImage})`}
+              // bgImage={`url(${post?.bannerImageUrl})`}
               bgPosition="100% 30%"
               bgRepeat="no-repeat"
               bgSize="cover"
