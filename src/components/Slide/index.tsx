@@ -51,7 +51,7 @@ export default function Slide({ posts }: SlideProps) {
               align="center"
               justify="center"
               direction="column"
-              bgImage={`url(${post?.bannerImage})`}
+              // bgImage={`url(${post?.bannerImage})`}
               bgPosition="100% 30%"
               bgRepeat="no-repeat"
               bgSize="cover"

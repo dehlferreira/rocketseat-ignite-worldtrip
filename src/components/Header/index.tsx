@@ -1,11 +1,12 @@
 import { Flex, Grid, Image, Icon } from '@chakra-ui/react';
 import { RiArrowLeftSLine } from 'react-icons/ri';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 // import Link from 'next/link';
 
 export default function Header() {
-  const { asPath } = useRouter();
-  const isHomePage = asPath === '/';
+  // const { asPath } = useRouter();
+  // const isHomePage = asPath === '/';
+  const isHomePage = true;
 
   return (
     <Flex
