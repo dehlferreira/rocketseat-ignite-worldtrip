@@ -7,7 +7,6 @@ import { RichText } from 'prismic-dom';
 
 import Slide from '../components/Slide';
 import Banner from '../components/Banner';
-import Header from '../components/Header';
 import Separator from '../components/Separator';
 import Categories from '../components/Categories';
 
@@ -24,29 +23,27 @@ interface PostsProps {
   posts: Posts[];
 }
 
-export default function Home() {
+export default function Home({ posts }: PostsProps) {
   return (
     <Flex direction="column">
       <Head>
         <title>Woldtrip | Home</title>
       </Head>
 
-      {/* <Header /> */}
+      <Banner />
+      <Categories />
+      <Separator />
 
-      {/* <Banner /> */}
-      {/* <Categories /> */}
-      {/* <Separator /> */}
-
-      {/* <Heading
+      <Heading
         textAlign="center"
         fontWeight="500"
         mb={['5', '14']}
         fontSize={['lg', '3xl', '4xl']}
       >
         Vamos nessa? <br /> Então escolha seu continente
-      </Heading> */}
+      </Heading>
 
-      {/* <Slide posts={posts} /> */}
+      <Slide posts={posts} />
     </Flex>
   );
 }
@@ -58,18 +55,18 @@ export const getStaticProps: GetStaticProps = async () => {
     {},
   );
 
-  // const posts = postResponse.results.map(post => {
-  //   return {
-  //     uid: post?.uid,
-  //     bannerTitle: RichText.asText(post?.data?.banner_title),
-  //     bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
-  //     // bannerImageUrl: post?.data?.banner_image?.url,
-  //   };
-  // });
+  const posts = postResponse.results.map(post => {
+    return {
+      uid: post?.uid,
+      bannerTitle: RichText.asText(post?.data?.banner_title),
+      bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
+      bannerImageUrl: post?.data?.banner_image?.url,
+    };
+  });
 
   return {
     props: {
-      // posts,
+      posts,
     },
     revalidate: 60 * 60 * 24, // 24 hours
   };
