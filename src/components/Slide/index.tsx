@@ -57,25 +57,25 @@ export default function Slide({ posts }: SlideProps) {
               bgSize="cover"
               textAlign="center"
             >
-              <Link href="#">
-                <a>
-                  <Heading
-                    fontSize={['3xl', '4xl', '5xl']}
-                    color="gray.100"
-                    fontWeight="bold"
-                  >
-                    {post.bannerTitle}
-                  </Heading>
-                  <Text
-                    fontWeight="bold"
-                    color="gray.300"
-                    fontSize={['0.8rem', '1xl', '2xl']}
-                    mt={['2', '4']}
-                  >
-                    {post.bannerSubtitle}
-                  </Text>
-                </a>
-              </Link>
+              {/* <Link href="#"> */}
+              <a href="https://www.google.com.br">
+                <Heading
+                  fontSize={['3xl', '4xl', '5xl']}
+                  color="gray.100"
+                  fontWeight="bold"
+                >
+                  {post.bannerTitle}
+                </Heading>
+                <Text
+                  fontWeight="bold"
+                  color="gray.300"
+                  fontSize={['0.8rem', '1xl', '2xl']}
+                  mt={['2', '4']}
+                >
+                  {post.bannerSubtitle}
+                </Text>
+              </a>
+              {/* </Link> */}
             </Flex>
           </SwiperSlide>
         ))}
