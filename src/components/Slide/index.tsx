@@ -14,38 +14,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
-const continents = [
-  {
-    id: '1',
-    title: 'África',
-    text: 'O continente mais antigo',
-    image: "url('/temp/europa.png')",
-    url: 'https://www.google.com',
-  },
-  {
-    id: '2',
-    title: 'Europa',
-    text: 'O continente mais antigo',
-    image: "url('/temp/europa.png')",
-    url: 'https://www.google.com',
-  },
-  {
-    id: '3',
-    title: 'Ásia',
-    text: 'O continente mais antigo',
-    image: "url('/temp/europa.png')",
-    url: 'https://www.google.com',
-  },
-  {
-    id: '4',
-    title: 'América',
-    text: 'O continente mais antigo',
-    image: "url('/temp/europa.png')",
-    url: 'https://www.google.com',
-  },
-];
+type Post = {
+  uid: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  bannerImage: string;
+};
 
-export default function Slide() {
+interface SlideProps {
+  posts: Post[];
+}
+
+export default function Slide({ posts }: SlideProps) {
   return (
     <Flex
       w="100%"
@@ -63,28 +43,28 @@ export default function Slide() {
         }}
         style={{ width: '100%', flex: '1' }}
       >
-        {continents.map(continent => (
-          <SwiperSlide key={continent.id}>
+        {posts.map(post => (
+          <SwiperSlide key={post.uid}>
             <Flex
               w="100%"
               h="100%"
               align="center"
               justify="center"
               direction="column"
-              bgImage="url('/temp/europa.png')"
+              bgImage={`url(${post.bannerImage})`}
               bgPosition="100% 30%"
               bgRepeat="no-repeat"
               bgSize="cover"
               textAlign="center"
             >
-              <Link href={continent.url}>
+              <Link href={post.uid}>
                 <a>
                   <Heading
                     fontSize={['3xl', '4xl', '5xl']}
                     color="gray.100"
                     fontWeight="bold"
                   >
-                    {continent.title}
+                    {post.bannerTitle}
                   </Heading>
                   <Text
                     fontWeight="bold"
@@ -92,7 +72,7 @@ export default function Slide() {
                     fontSize={['0.8rem', '1xl', '2xl']}
                     mt={['2', '4']}
                   >
-                    {continent.text}
+                    {post.bannerSubtitle}
                   </Text>
                 </a>
               </Link>

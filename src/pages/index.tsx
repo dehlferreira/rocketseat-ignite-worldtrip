@@ -1,20 +1,35 @@
 import Head from 'next/head';
 import { Flex, Heading } from '@chakra-ui/react';
 
-import Header from '../components/Header';
-import Banner from '../components/Banner';
-import Categories from '../components/Categories';
-import Separator from '../components/Separator';
-import Slide from '../components/Slide';
+import { GetStaticProps } from 'next';
+import Prismic from '@prismicio/client';
+import { RichText } from 'prismic-dom';
 
-export default function Home() {
+import Slide from '../components/Slide';
+import Banner from '../components/Banner';
+import Separator from '../components/Separator';
+import Categories from '../components/Categories';
+
+import { getPrismicClient } from '../services/prismic';
+
+type Posts = {
+  uid: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  bannerImage: string;
+};
+
+interface PostsProps {
+  posts: Posts[];
+}
+
+export default function Home({ posts }: PostsProps) {
   return (
     <Flex direction="column">
       <Head>
         <title>Woldtrip | Home</title>
       </Head>
 
-      <Header />
       <Banner />
       <Categories />
       <Separator />
@@ -28,7 +43,30 @@ export default function Home() {
         Vamos nessa? <br /> Então escolha seu continente
       </Heading>
 
-      <Slide />
+      <Slide posts={posts} />
     </Flex>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+  const postResponse = await prismic.query(
+    [Prismic.predicates.at('document.type', 'posts')],
+    {},
+  );
+
+  const posts = postResponse.results.map(post => {
+    return {
+      uid: post.uid,
+      bannerTitle: RichText.asText(post.data.banner_title),
+      bannerSubtitle: RichText.asText(post.data.banner_subtitle),
+      bannerImage: post.data.banner_image.url,
+    };
+  });
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
