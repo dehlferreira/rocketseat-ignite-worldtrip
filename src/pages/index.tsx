@@ -60,10 +60,10 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const posts = postResponse.results.map(post => {
     return {
-      uid: post.uid,
-      bannerTitle: RichText.asText(post.data.banner_title),
-      bannerSubtitle: RichText.asText(post.data.banner_subtitle),
-      bannerImage: post.data.banner_image.url,
+      uid: post?.uid,
+      bannerTitle: RichText.asText(post?.data?.banner_title),
+      bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
+      bannerImage: post?.data?.banner_image.url,
     };
   });
 

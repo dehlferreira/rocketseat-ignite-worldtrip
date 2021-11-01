@@ -43,15 +43,15 @@ export default function Slide({ posts }: SlideProps) {
         }}
         style={{ width: '100%', flex: '1' }}
       >
-        {posts.map(post => (
-          <SwiperSlide key={post.uid}>
+        {posts?.map(post => (
+          <SwiperSlide key={post?.uid}>
             <Flex
               w="100%"
               h="100%"
               align="center"
               justify="center"
               direction="column"
-              bgImage={`url(${post.bannerImage})`}
+              bgImage={`url(${post?.bannerImage})`}
               bgPosition="100% 30%"
               bgRepeat="no-repeat"
               bgSize="cover"
@@ -64,7 +64,7 @@ export default function Slide({ posts }: SlideProps) {
                   color="gray.100"
                   fontWeight="bold"
                 >
-                  {post.bannerTitle}
+                  {post?.bannerTitle}
                 </Heading>
                 <Text
                   fontWeight="bold"
@@ -72,7 +72,7 @@ export default function Slide({ posts }: SlideProps) {
                   fontSize={['0.8rem', '1xl', '2xl']}
                   mt={['2', '4']}
                 >
-                  {post.bannerSubtitle}
+                  {post?.bannerSubtitle}
                 </Text>
               </a>
               {/* </Link> */}
