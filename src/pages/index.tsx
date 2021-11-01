@@ -31,7 +31,7 @@ export default function Home({ posts }: PostsProps) {
         <title>Woldtrip | Home</title>
       </Head>
 
-      <Header />
+      {/* <Header /> */}
 
       <Banner />
       <Categories />
