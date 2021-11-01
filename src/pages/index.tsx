@@ -51,25 +51,26 @@ export default function Home() {
   );
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const prismic = getPrismicClient();
-//   const postResponse = await prismic.query(
-//     [Prismic.predicates.at('document.type', 'posts')],
-//     {},
-//   );
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+  const postResponse = await prismic.query(
+    [Prismic.predicates.at('document.type', 'posts')],
+    {},
+  );
 
-//   const posts = postResponse.results.map(post => {
-//     return {
-//       uid: post?.uid,
-//       bannerTitle: RichText.asText(post?.data?.banner_title),
-//       bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
-//       bannerImage: post?.data?.banner_image.url,
-//     };
-//   });
+  const posts = postResponse.results.map(post => {
+    return {
+      uid: post?.uid,
+      bannerTitle: RichText.asText(post?.data?.banner_title),
+      bannerSubtitle: RichText.asText(post?.data?.banner_subtitle),
+      bannerImage: post?.data?.banner_image.url,
+    };
+  });
 
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// };
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60 * 60 * 24, // 24 hours
+  };
+};
